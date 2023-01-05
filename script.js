@@ -31,7 +31,11 @@ function printTime() {
     var time = hour;
     showdayDate.innerHTML = noofday[date.getDay()];
     showTime.innerHTML = hour + " : " + min + " : " + sec + " " + period;
-    showDate.innerHTML = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+    const month = date.getMonth()
+    if(month<10){
+        month = "0" + month
+    }
+    showDate.innerHTML = date.getDate() + "/" + month + "/" + date.getFullYear();
 }
 setInterval(() => {
     printTime()
